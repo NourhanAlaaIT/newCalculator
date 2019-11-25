@@ -55,8 +55,6 @@ class App extends Component {
         <div className="calc-wrapper">
           <Input>{this.state.result}</Input>
           <Buttons
-            numbers={this.state.numbers}
-            operators={this.state.operators}
             onClick={this.onClick}
           ></Buttons>
         </div>
