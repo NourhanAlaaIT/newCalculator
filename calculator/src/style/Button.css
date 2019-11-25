@@ -1,0 +1,38 @@
+.button-wrapper {
+  width: 4em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: #e0e1e6;
+  color: #888;
+  flex: 1;
+  outline: 1px solid #888;
+  cursor: pointer;
+  border: 0;
+}
+.operator {
+  background-color: #fe9241;
+  color: #fff;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.clear-btn,
+.delete-btn {
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: #c5c3cd;
+  color: #000;
+  flex: 1;
+  outline: 1px solid #888;
+  cursor: pointer;
+  border: 0;
+}
