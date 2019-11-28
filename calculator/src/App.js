@@ -3,51 +3,6 @@ import "./App.css";
 import Logic from "./components/Logic";
 
 class App extends Component {
-  state = {
-    result: ""
-  };
-
-  onClick = val => {
-    if (val === "=") {
-      this.calc();
-    } else if (val === "AC") {
-      this.clearInput();
-    } else if (val === "CE") {
-      this.delete();
-    } else if (val === ".") {
-      this.addDecimal();
-    } else if (val === "0") {
-      this.addZeroToInput();
-    } else {
-      this.setState({
-        result: this.state.result + val
-      });
-    }
-  };
-  addZeroToInput = () => {
-    if (this.state.result !== "") {
-      this.setState({ result: this.state.result + 0 });
-    }
-  };
-  addDecimal = () => {
-    if (this.state.result.indexOf(".") === -1) {
-      this.setState({ result: this.state.result + "." });
-    }
-  };
-  clearInput = () => {
-    this.setState({ result: "" });
-  };
-  delete = () => {
-    this.setState({
-      result: this.state.result.slice(0, -1)
-    });
-  };
-  calc = () => {
-    this.setState({
-      result: (eval(this.state.result) || "") + ""
-    });
-  };
-
   render() {
     return (
       <div className="app">
