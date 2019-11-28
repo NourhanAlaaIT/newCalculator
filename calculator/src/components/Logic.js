@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
-import Logic from "./components/Logic";
+import Input from "./Input";
+import Buttons from "./Buttons";
 
-class App extends Component {
+class Logic extends Component {
   state = {
     result: ""
   };
@@ -24,24 +24,30 @@ class App extends Component {
       });
     }
   };
+  // this function to prevent add zeros to input if the input is empty
   addZeroToInput = () => {
     if (this.state.result !== "") {
       this.setState({ result: this.state.result + 0 });
     }
   };
+  // this function to add decimal to input if there is no decimal
   addDecimal = () => {
     if (this.state.result.indexOf(".") === -1) {
       this.setState({ result: this.state.result + "." });
     }
   };
+  // this function to reset the input
   clearInput = () => {
     this.setState({ result: "" });
   };
+  // this function to backspace
   delete = () => {
     this.setState({
       result: this.state.result.slice(0, -1)
     });
   };
+  // this function to evaluate everything in the input
+  // eval evaluates the inputs in state's result
   calc = () => {
     this.setState({
       result: (eval(this.state.result) || "") + ""
@@ -50,13 +56,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div className="calc-wrapper">
-          <Logic />
-        </div>
-      </div>
+      <React.Fragment>
+        <Input>{this.state.result}</Input>
+        <Buttons onClick={this.onClick}></Buttons>
+      </React.Fragment>
     );
   }
 }
 
-export default App;
+export default Logic;

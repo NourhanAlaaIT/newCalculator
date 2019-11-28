@@ -3,6 +3,8 @@ import "../style/Button.css";
 
 class Buttons extends Component {
   render() {
+    // return buttons of calculator 
+    // onClick has event & the event his target is the name of buttons
     return (
       <div>
         <div className="row">
@@ -11,7 +13,7 @@ class Buttons extends Component {
             className="clear-btn"
             onClick={e => this.props.onClick(e.target.name)}
           >
-            AC
+            C
           </button>
           <button
             name="CE"

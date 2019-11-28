@@ -3,10 +3,8 @@ import "../style/Input.css";
 
 class Input extends Component {
   render() {
-    return (
-      <div className="input">{this.props.children}
-      </div>
-    );
+    //return the screen of calculator
+    return <div className="input">{this.props.children}</div>;
   }
 }
 
